@@ -10,10 +10,10 @@ module Geometry
  Vector
 ) where
 
-data Point = Origin | Point Float Float deriving (Show)
-data Line = Line Point Point deriving (Show)
-data Shape = Rect Point Point | Circle Point Float deriving (Show)
-data Vector = Vector Float Float deriving (Show)
+data Point = Origin | Point {x::Float, y::Float} deriving (Show)
+data Line = Line {p1::Point, p2::Point} deriving (Show)
+data Shape = Rect {p1::Point, p2::Point} | Circle {p::Point,r::Float} deriving (Show)
+data Vector = Vector {x::Float, y::Float} deriving (Show)
 
 
 distance :: Point -> Float
